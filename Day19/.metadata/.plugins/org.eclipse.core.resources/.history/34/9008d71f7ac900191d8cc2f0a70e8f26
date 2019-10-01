@@ -1,0 +1,17 @@
+package com.hcl.ems;
+
+import java.sql.Date;
+
+public class LeaveHistory {
+private int LEA_ID;
+private Date LEA_START_DATE;
+private Date LEA_END_DATE;
+private int LEA_NO_OF_DAYS;
+private String LEA_REASON;
+private String LEA_TYPE;
+private Date LEA_APPLIED_ON;
+private String LEA_MGR_COMMENTS;
+private int EMP_ID;
+private String LEA_STATUS;
+
+}

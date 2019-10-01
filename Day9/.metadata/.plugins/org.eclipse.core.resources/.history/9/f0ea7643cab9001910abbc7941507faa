@@ -1,0 +1,8 @@
+package com.hcl.inventory;
+
+public class InventoryBAL {
+	public static String generateInventoryBal() {
+		return new InventoryDAO().generateStockIdDao();
+	}
+
+}

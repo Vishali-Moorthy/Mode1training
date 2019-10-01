@@ -1,0 +1,21 @@
+package com.hcl.collections;
+
+
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SortStudent {
+	public static void main(String[] args) {
+	Comparator<Student> c = new CityComparator();
+	Comparator<Student> e1 = new CgpComparator();
+	Set<Student> setStudent = new TreeSet<Student>(c);
+	Set<Student> setStudent = new TreeSet<Student>(e1);
+	setStudent.add(new Student("Visha","D","Tanjore",8.7));
+	setStudent.add(new Student("shiva", "s", "Chennai", 8.8));
+	setStudent.add(new Student("Priya", "s", "Salem", 9.3));
+	setStudent.add(new Student("Vineeth", " p", "Erode", 8.5));
+	System.out.println("Student list");
+	setStudent.forEach(System.out :: println);
+	}
+}

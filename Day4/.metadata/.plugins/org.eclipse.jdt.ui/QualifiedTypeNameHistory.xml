@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.hcl.Ex.ThrEx"/>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.hcl.Ex.NegativeException"/>
+<fullyQualifiedTypeName name="com.hcl.Ex.NumberZeroException"/>
+<fullyQualifiedTypeName name="com.hcl.Ex.Custom"/>
+<fullyQualifiedTypeName name="com.hcl.Ex.Email"/>
+<fullyQualifiedTypeName name="com.hcl.Ex.InvalidEmailException"/>
+<fullyQualifiedTypeName name="com.hcl.ex.NegativeException"/>
+<fullyQualifiedTypeName name="com.hcl.ex.NumberZeroException"/>
+<fullyQualifiedTypeName name="com.hcl.ex.InvalidEmailException"/>
+<fullyQualifiedTypeName name="com.hcl.ex.InvalidUserNameException"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+</qualifiedTypeNameHistroy>

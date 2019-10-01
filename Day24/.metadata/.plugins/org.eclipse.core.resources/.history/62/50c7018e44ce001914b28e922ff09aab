@@ -1,0 +1,13 @@
+package com.hcl.hib;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+
+public class DeptCrud {
+	
+	public List<Department> showDepartment() {
+		SessionFactory sf=hi
+	}
+
+}

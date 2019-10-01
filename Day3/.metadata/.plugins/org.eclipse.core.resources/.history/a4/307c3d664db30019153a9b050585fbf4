@@ -1,0 +1,18 @@
+package com.hcl.enu;
+
+public class Attendance {
+
+	public static void show(String...name) {
+		for (String s : name) {
+			System.out.print(s + " ");
+		}
+		System.out.println();
+	}
+	public static void main(String[] args) {
+		show();
+		show("Visha","Shiva");
+		show("Visha","Shiva","Priya","Swetha","viji");
+		show("Veena","Vineeth","Sree");
+		
+	}
+}

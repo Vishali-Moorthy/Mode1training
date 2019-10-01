@@ -1,0 +1,20 @@
+package com.hcl.java;
+
+public class MaxOfNum {
+	
+	public void find(int a,int b,int c) {
+		if(a>b&&a>c) {
+			System.out.println("a is greater");
+		} if(c>b&&c>a) {
+			System.out.println("c is greater");
+		} else {
+			System.out.println("b is greater");
+		}
+	}
+	public static void main(String[] args) {
+		int a=4,b=5,c=2;
+		new MaxOfNum().find(a, b, c);
+		
+	}
+
+}

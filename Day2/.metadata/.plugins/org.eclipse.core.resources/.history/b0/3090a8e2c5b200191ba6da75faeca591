@@ -1,0 +1,33 @@
+package com.hcl.inh;
+
+public class CustomStr {
+	 static String name;
+	 public CustomStr(String name) {
+		 this.name=name;
+	 }
+	 public int length() {
+		 char[] arr=name.toCharArray();
+		 int i=0;
+		 for (char c:arr) {
+			 i++;
+		 }
+		 return i;
+	 }
+	 public void pos() {
+		 System.out.println(name.charAt(5));
+	 }
+	 public void upcase() {
+		 System.out.println(name.toUpperCase());
+	 }
+	 public void lowcase() {
+		 System.out.println(name.toLowerCase());
+	 }
+	public static void main(String[] args) {
+		CustomStr obj=new CustomStr("Visha");
+		System.out.println(obj.length());
+		obj.pos();
+		obj.upcase();
+		obj.lowcase();
+	}
+
+}

@@ -1,0 +1,102 @@
+<%@page import="com.hcl.hib.AddSubject"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="index.jsp" name="productForm">
+		Subject :
+			<select name="subject" placeholder="please select one" id="dropdown" onchange="change()">
+				<option value="Digital Communication">Digital Communication</option>
+				<option value="Control Systems">Control Systems</option>
+				<option value="Wireless Networks">Wireless Networks</option>
+				<option value="Computer Networks">Computer Networks</option>
+				<option value="Electromagnetic Theory">Electromagnetic Theory</option>
+				<option value="Digital Signal Processing">Digital Signal Processing</option>
+				<option value="Microprocessor">Microprocessor</option>
+			</select><br/><br/>
+		
+				
+		Theory :
+			<input type="text" name="theory" id="theory" readonly="readonly"/><br/><br/>
+		Practical :
+			<input type="text" name="practical" id="practical" readonly="readonly"/><br/><br/>
+		Year :
+			<input type="text" name="year"/><br/><br/>
+		Instructor :
+			<input type="text" name="instructor"/><br/><br/>
+			<input type="submit" value="Click to Add"/>
+	</form>
+	
+	<script>
+        function change(){
+        var dval= document.getElementById("dropdown").value;
+        
+       
+        if(dval =="Digital Communication"){
+        	productForm.theory.value="42";
+        	productForm.practical.value="14";
+        }
+        if(dval =="Control Systems"){
+        	//alert("hi");
+        	productForm.theory.value="90";
+        	productForm.practical.value="50";
+        }
+        if(dval =="Wireless Networks"){
+        	//alert("hi");
+        	productForm.theory.value="69";
+        	productForm.practical.value="41";
+        }
+        
+        if(dval =="Computer Networks"){
+        	//alert("hi");
+        	productForm.theory.value="69";
+        	productForm.practical.value="41";
+        }
+        
+        if(dval =="Electromagnetic Theory"){
+        	//alert("hi");
+        	productForm.theory.value="107";
+        	productForm.practical.value="93";
+        }
+        
+        if(dval =="Digital Signal Processing"){
+        	//alert("hi");
+        	productForm.theory.value="84";
+        	productForm.practical.value="56";
+        }
+        
+        if(dval =="Microprocessor"){
+        	//alert("hi");
+        	productForm.theory.value="60";
+        	productForm.practical.value="0";
+        }
+        
+       
+        }
+    <%--     document.getElementById("dropdown").value = '<% out.print(colour); %>'; --%>
+        </script>
+        <%
+		if(request.getParameter("year") != null && 
+			request.getParameter("instructor") != null &&
+			request.getParameter("theory") != null && 
+			request.getParameter("practical") != null &&
+			request.getParameter("subject") != null) {
+					AddSubject e=new AddSubject();
+					e.setEmpno(Integer.parseInt(request.getParameter("empno")));
+					e.setName(request.getParameter("name"));
+					e.setDept(request.getParameter("dept"));
+					e.setDesig(request.getParameter("desig"));
+					e.setBasic(Integer.parseInt(request.getParameter("basic")));
+					EmployCrud crud=new EmployCrud();
+					out.println(crud.insertEmploy(e));
+				}
+	%>
+    </body>
+</body>
+	
+</html>

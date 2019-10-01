@@ -1,0 +1,17 @@
+package com.hcl.quiz;
+
+public class Quiz5 {
+	
+	public void calc(double r) {
+		double c;
+		c=Math.PI*r;
+		System.out.println(+c);
+		
+	}
+	public static void main(String[] args) {
+		double r=12.3;
+		new Quiz5().calc(r);
+		
+	}
+
+}

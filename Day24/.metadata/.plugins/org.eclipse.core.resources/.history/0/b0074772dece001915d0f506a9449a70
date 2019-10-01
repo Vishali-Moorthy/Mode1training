@@ -1,0 +1,18 @@
+package com.hcl.hib;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class College {
+	
+	public String insertSubject(College subjects) {
+		SessionFactory sf=HibernateUtil.getConnection();
+		Session s=sf.openSession();
+		Transaction t=s.beginTransaction();
+		s.save(subjects);
+		t.commit();
+		return "Record Inserted";
+	}
+
+}

@@ -1,0 +1,72 @@
+package com.hcl.hib;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class College {
+	
+	public String insertSubject(AddSubject addsubject) {
+		SessionFactory sf=HibernateUtil.getConnection();
+		Session s=sf.openSession();
+		Transaction t=s.beginTransaction();
+		s.save(addsubject);
+		t.commit();
+		return "Record Inserted";
+	}
+	
+	public List<String> instructorList(){
+		SessionFactory sf=HibernateUtil.getConnection();
+		Session s=sf.openSession();
+		Query q=s.createQuery("select distinct instructor from AddSubject");
+		List<String> lst=q.list();
+		return lst;
+	}
+
+	public List<String> subjectList(String instructor){
+		SessionFactory sf=HibernateUtil.getConnection();
+		Session s=sf.openSession();
+		Query q=s.createQuery("select distinct subject from AddSubject where instructor='"+instructor+"'");
+		List<String> lst=q.list();
+		return lst;
+	}
+	
+	public static String generateId() {
+		SessionFactory sf=HibernateUtil.getConnection();
+		Session s=sf.openSession();
+		Query q=s.createQuery("select max(fid)+1 from FeedBack");
+		List<FeedBack> lstFeed=q.list();
+		String feedid="";
+	    if(lstFeed.size()==0){
+	    	feedid="C001";
+	    	return feedid;
+	    }
+	    else {
+	    	for(FeedBack c : lstFeed){
+	    		feedid=c.getFid();
+	    	}
+	    	 int fbid= Integer.parseInt(feedid.substring(1));
+	    	 fbid++;
+	    	 if(fbid>=1&&fbid<=9){
+	    		 feedid="C00"+fbid;
+	    	 }
+	    	 if(fbid>9&&fbid<99)
+	    	 {
+	    		 feedid="C0"+fbid;
+	    	 }
+	    	 if(fbid>99&&fbid<999)
+	    	 {
+	    		 feedid="C"+fbid;
+	    	 }
+	    	 System.out.println("FeedBack is " +feedid);
+	    	 return feedid;
+	    }
+		
+	}
+
+	
+
+}

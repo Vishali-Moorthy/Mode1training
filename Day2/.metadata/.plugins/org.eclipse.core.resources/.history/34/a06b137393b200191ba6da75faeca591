@@ -1,0 +1,12 @@
+package com.hcl.boxing;
+
+public class Quiz2 {
+
+	public void check() {
+		if(null==null) {
+			System.out.println("Welcome");
+		}  {
+			System.out.println("bye");
+		}
+	}
+}

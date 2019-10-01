@@ -1,0 +1,20 @@
+package com.hcl.inventory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+public class InventoryDAO {
+	PreparedStatement pst;
+	Connection con;
+	
+	public String generateStockIdDao() {
+		con = DaoConnection.getConnection();
+		String stockid = "S000";
+		String cmd = " select case when max(stockid) IS NULL " 
+		               + "THEN else MAX(stockid)+1 END stoid from stock ";
+
+}

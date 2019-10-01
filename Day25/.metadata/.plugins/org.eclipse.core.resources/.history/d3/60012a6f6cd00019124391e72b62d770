@@ -1,0 +1,11 @@
+package com.hcl.main;
+
+public class Test  
+{     
+    int x = 2; 
+    Test(int i) { x = i; }  
+    public static void main(String[] args) {     
+         Test t = new Test(); 
+         System.out.println("x = " + t.x); 
+    } 
+}

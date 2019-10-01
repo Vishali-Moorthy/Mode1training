@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+function show() {
+	
+	var fn=frmName.firstName.value;
+	var ln=frmName.lastName.value;
+    var name=fname+lname;
+	frmName.fullName.value=name;
+
+	
+}

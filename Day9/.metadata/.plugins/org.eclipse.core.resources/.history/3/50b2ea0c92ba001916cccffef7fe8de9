@@ -1,0 +1,58 @@
+package com.hcl.inventory;
+
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class InventoryTestCase {
+	
+	
+	
+	@Test
+	public void testGenerateStockId() {
+		Connection con = DaoConnection.getConnection();
+		String stockid;
+		String cmd = " select max(stockid) sid from stock";
+		String stid = " ";
+		try {
+			PreparedStatement pst = con.prepareStatement(cmd);
+			ResultSet rs = pst.executeQuery();
+			rs.next();
+			stid = rs.getString("sid");
+			int id = Integer.parseInt(stid.substring(1));
+			id++;
+			if (id >=1 && id <=9) {
+				stid = "S00" + id;
+			}
+			if (id >=10 && id<= 99) {
+				stid = "S0" + id;
+			}
+			if (id >= 100 && id <=999) {
+				stid = "S" + id;
+			} 
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertEquals(stid, InventoryBAL.generateInventoryBal());
+	@Test
+	public void testGettersSetters() {
+		Inventory objInventory = new Inventory();
+		objInventory.setStockid("S001");
+		objInventory.setItemname("Speakers");
+		objInventory.setPrice(55677);
+		objInventory.setQuantityavail(21);
+		
+		assertEquals("S001", objInventory.getStockid());
+		assertEquals("Speakers", objInventory.getItemname());
+		assertEquals(55677, objInventory.getPrice(),0.00);
+		assertEquals(21, objInventory.getQuantityavail());
+	}
+
+}

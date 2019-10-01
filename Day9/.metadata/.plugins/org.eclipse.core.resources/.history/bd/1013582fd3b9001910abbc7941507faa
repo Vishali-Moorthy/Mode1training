@@ -1,0 +1,88 @@
+package com.hcl.inventory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+
+
+public class InventoryDAO {
+	PreparedStatement pst;
+	Connection con;
+	
+    public Inventory searchStockIdDao(String stockid) {
+    	con = DaoConnection.getConnection();
+		String cmd = " select * from stock where stockid=? ";
+		Inventory objInventory = null;
+		try {
+			pst = con.prepareStatement(cmd);
+			pst.setString(1, stockid);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				objInventory = new Inventory();
+				objInventory.setItemname(rs.getString("itemname"));
+				objInventory.setPrice(rs.getInt("price"));
+				objInventory.setQuantityavail(rs.getInt("quantityavail"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objInventory;
+	}
+	
+	public String createStockIdDao(Inventory objInventory) {
+		con = DaoConnection.getConnection();
+		String cmd = "Insert into stock(stockid,itemname, "
+				      + "price,quantityavail) values(?,?,?,?) ";
+		String result = " ";
+		try {
+			pst = con.prepareStatement(cmd);
+			pst.setString(1, objInventory.getStockid());
+			pst.setString(2, objInventory.getItemname());
+			pst.setInt(3, objInventory.getPrice());
+			pst.setInt(4, objInventory.getQuantityavail());
+			pst.executeUpdate();
+			result = "Account created successfully..";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = e.getMessage();
+		}
+		return result;
+	}
+	
+	
+	public String generateStockIdDao() {
+		con = DaoConnection.getConnection();
+		String stockid;
+		String cmd = " select max(stockid) sid from stock";
+		String stid = " ";
+		try {
+			PreparedStatement pst = con.prepareStatement(cmd);
+			ResultSet rs = pst.executeQuery();
+			rs.next();
+			stid = rs.getString("sid");
+			int id = Integer.parseInt(stid.substring(1));
+			id++;
+			if (id >=1 && id <=9) {
+				stid = "S00" + id;
+			}
+			if (id >=10 && id<= 99) {
+				stid = "S0" + id;
+			}
+			if (id >= 100 && id <=999) {
+				stid = "S" + id;
+			} 
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return stid;
+
+}
+}

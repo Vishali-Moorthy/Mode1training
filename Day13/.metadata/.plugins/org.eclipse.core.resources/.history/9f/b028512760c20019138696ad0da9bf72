@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="get" action="CreateInventoryServlet">
+		<center>
+			Item Name:
+				<input type="text" name="itemname"/><br/><br/>
+			Price:
+				<input typr="text" name="price"/><br/><br/>
+			Quantity Available:
+				<input type="text" name="quantityavail"/><br/><br/>
+				<input type="submit" value="Create"/>
+		</center>
+	</form>
+</body>
+</html>

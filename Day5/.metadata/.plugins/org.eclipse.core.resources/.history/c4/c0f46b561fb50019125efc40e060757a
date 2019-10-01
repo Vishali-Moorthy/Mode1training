@@ -1,0 +1,18 @@
+package com.hcl.collections;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class SortEmp {
+  public static void main(String[] args) {
+    SortedSet s=new TreeSet();
+    s.add(new Emp(1, "anisha", 65748.9));
+    s.add(new Emp(2, "anubhav", 67844.5));
+    s.add(new Emp(3, "hema", 67588));
+    s.add(new Emp(4, "anu", 67784.5));
+    s.add(new Emp(5, "teju", 67688));
+    System.out.println("Sorted data");
+    s.forEach(System.out::println);
+  }
+
+}

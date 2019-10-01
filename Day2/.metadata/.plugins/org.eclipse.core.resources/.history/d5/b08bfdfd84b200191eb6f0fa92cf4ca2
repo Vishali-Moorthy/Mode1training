@@ -1,0 +1,15 @@
+package com.hcl.boxing;
+
+public class Employ {
+	
+	int empNo;
+	String name;
+	double basic;
+	@Override
+	public String toString() {
+		return "Employ [empNo=" + empNo + ", name=" + name + ", basic=" + basic + "]";
+	}
+	
+	
+
+}

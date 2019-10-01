@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+function show() {
+	
+	var fname,lname,name;
+	fname=frmName.firstName.value;
+	lname=frmName.lastName.value;
+````name=fname+lname;
+	frmname.fullName.value=name;
+
+	
+}

@@ -1,0 +1,15 @@
+package com.hcl.boxing;
+
+public class studentSearch {
+	
+	public Student showStudent(int sno) {
+		Student student=null;
+		if(sno==1) {
+			Student=new student();
+		}
+		
+	}
+	
+	
+
+}

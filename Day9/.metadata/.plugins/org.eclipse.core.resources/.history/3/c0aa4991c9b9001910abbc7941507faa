@@ -1,0 +1,9 @@
+package com.hcl.inventory;
+
+public class CreateStockMain {
+	public static void main(String[] args) {
+		String stockid = InventoryBAL.generateInventoryBal();
+		System.out.println(stockid);
+	}
+
+}

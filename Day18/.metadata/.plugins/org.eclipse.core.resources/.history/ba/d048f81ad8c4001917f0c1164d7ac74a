@@ -1,0 +1,18 @@
+package com.hcl.inventory;
+
+public class PlaceOrderInventory {
+
+	private int quantityorder;
+	
+	public int getQuantityorder() {
+		return quantityorder;
+	}
+	public void setQuantityorder(int quantityorder) {
+		this.quantityorder = quantityorder;
+	}
+	
+	public String placeorderInventory() {
+		return InventoryBAL.placeorderInventoryBal(stockid, quantityorder);
+	}
+
+}

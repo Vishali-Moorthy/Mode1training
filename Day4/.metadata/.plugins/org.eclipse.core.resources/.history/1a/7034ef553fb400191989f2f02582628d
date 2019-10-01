@@ -1,0 +1,8 @@
+package com.hcl.ex;
+
+public class InvalidUserName extends Exception {
+  public InvalidUserNameException(String error) {
+    super(error);
+    }
+}
+

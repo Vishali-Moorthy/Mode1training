@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<table border="3">
+	<tr>
+	<td><a href="AccountDetails">Account Details</a></td>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	</tr>
+	<tr>
+	<td><a href="SearchIssue">Search Issue</a></td>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	</tr>
+	<tr>
+	<td><a href="Return">Return</a></td>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	</tr>
+	<tr>
+	<td><a href="History">History</a></td>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	</tr>
+	</table>
+</body>
+</html>

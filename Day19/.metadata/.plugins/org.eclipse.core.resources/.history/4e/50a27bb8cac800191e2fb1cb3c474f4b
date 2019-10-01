@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style>
+.flex-container{
+display: flex;
+}
+
+.flex-container>div{
+margin:10px;
+padding:20px;
+font-size:20px;
+background-color:turquoise;
+}
+.flex-container>div1{
+margin:10px;
+padding:20px;
+font-size:20px;
+display: flex;
+flex-direction:column;
+background-color:turquoise;
+}
+.flex-container>div2{
+margin:10px;
+padding:20px;
+font-size:20px;
+display: flex;
+flex-direction:column;
+background-color:turquoise;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1><b>Employee Dashboard : Sections</b></h1>
+<div class="flex-container">
+<div>
+<jsp:include page="MyDetails.jsp"/>
+</div>
+<div>
+<jsp:include page="MyManager.jsp"/>
+</div>
+</div>
+
+<div1 class="flex-container">
+<div1>
+<jsp:include page="MyLeave.jsp"/>
+</div1>
+</div1>
+
+<div2 class="flex-container">
+<div2>
+<jsp:include page="EmployPendingLeave.jsp"/>
+</div2>
+</div2>
+</body>
+</html>

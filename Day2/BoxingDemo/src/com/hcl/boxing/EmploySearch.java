@@ -1,0 +1,32 @@
+package com.hcl.boxing;
+
+public class EmploySearch {
+	
+	public Employ showEmploy(int empno) {
+		Employ employ=null;
+		if(empno==1) {
+			employ=new Employ();
+			employ.empNo=100;
+			employ.name="Visha";
+			employ.basic=23455;
+		}
+		if(empno==3) {
+			employ=new Employ();
+			employ.empNo=10;
+			employ.name="Priya";
+			employ.basic=2345;
+		}
+		return employ;
+	}
+	public static void main(String[] args) {
+		EmploySearch objSearch=new EmploySearch();
+		Employ res=objSearch.showEmploy(2);
+		if(res!=null) {
+			System.out.println(res);
+		} else {
+			System.out.println("Empno not found");
+		}
+		
+	}
+
+}

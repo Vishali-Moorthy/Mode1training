@@ -1,0 +1,41 @@
+package com.hcl.Ex;
+
+class InvalidUserNameException extends Exception {
+	public InvalidUserNameException(String error) {
+		super(error);
+	}
+}
+
+class InvalidEmailException extends Exception {
+	public InvalidEmailException(String error) {
+		super(error);
+	}
+	
+}
+public class Email {
+	
+	public static void check(String uname) throws InvalidEmailException, InvalidUserNameException {
+		//boolean flag=true;
+		if(uname.indexOf('@')==-1) {
+			//flag=false;
+			throw new InvalidEmailException("Invalid email");
+		}
+		if(uname.indexOf('@')>12) {
+			//flag=false;
+			throw new InvalidUserNameException("username contains only 12 char");
+		}
+		
+	}
+	public static void main(String[] args) {
+		
+		String uname="vishalakshi@gmail.com";
+		try {
+			new Email().check(uname);
+		} catch (InvalidEmailException|InvalidUserNameException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+	}
+
+}

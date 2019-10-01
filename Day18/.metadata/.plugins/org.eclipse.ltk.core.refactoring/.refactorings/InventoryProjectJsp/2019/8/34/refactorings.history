@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.hcl.inv&apos; to &apos;com.hcl.inventory&apos;&#x0D;&#x0A;- Original project: &apos;InventoryProjectJsp&apos;&#x0D;&#x0A;- Original element: &apos;InventoryProjectJsp/src/com.hcl.inv&apos;&#x0D;&#x0A;- Renamed element: &apos;InventoryProjectJsp/src/com.hcl.inventory&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.hcl.inv&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.hcl.inv" name="com.hcl.inventory" qualified="false" references="true" stamp="1566473442755" textual="false" version="1.0"/>
+</session>
